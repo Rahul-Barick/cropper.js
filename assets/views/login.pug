@@ -1,0 +1,17 @@
+html
+    head
+        link(rel='stylesheet', type='text/css', href=base_url +'css/login_theme.css')
+        title= 'Color'
+    body  
+        .container
+            .head
+                h2 LOGIN
+            form(role='form',action=base_url+'login',method='POST')
+                input(type='text', id='username', name='username', placeholder="Username")
+                br
+                input(type='password', id='password', name='password', placeholder="Password")
+                br
+                if error_message
+                    .message= error_message
+                button(type='submit')#login
+                    | Login

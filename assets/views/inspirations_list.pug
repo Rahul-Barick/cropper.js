@@ -1,0 +1,48 @@
+extends layout.pug
+
+block scripts
+    script(type='text/javascript').
+        var locale_data={}
+        locale_data.base_url='!{base_url}'
+    script(type='text/javascript',src=base_url + 'js/chosen.jquery.min.js')
+    script(type='text/javascript',src=base_url +'js/inspirations_list.js')
+    
+
+block content
+    .row
+        .col-lg-12
+            h1.page-header  Inspiration List   
+    br
+    .row
+        .col-lg-1
+            label Caption
+        .col-lg-2
+            input#inspiration_caption.form-control
+        .col-lg-1
+            label Stylings
+        .col-lg-2
+            select.chosen-select.form-control(data-placeholder='Select styles', multiple='true')
+                for style in styling
+                    option(value=style)= style
+        .col-lg-1
+            label Ocassion
+        .col-lg-2
+            select.chosen-single.form-control(data-placeholder='Select ocassion')
+                option(value="") Select ocassion
+                for ocsn in ocassion
+                    option(value=ocsn)= ocsn
+        .col-lg-2
+            button.btn.btn-default#search_list Search
+    br
+    .row
+        .col-lg-12
+            .table-responsive
+                table.table.table-bordered.table-hover#list_table
+                    thead
+                        tr
+                            th Caption
+                            th Photo
+                            th Styling
+                            th Ocassions
+                            th Actions
+                    tbody

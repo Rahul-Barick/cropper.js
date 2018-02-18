@@ -1,0 +1,62 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='Curb Side Order Form Request')
+    meta(name='author', content='Rahul Barock')
+    title colour
+    link(href=base_url+'css/bootstrap.min.css', rel='stylesheet')
+    link(href=base_url+'css/sb-admin.css', rel='stylesheet')
+    link(href=base_url+'css/font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+    link(href=base_url+'css/datatable.css', rel='stylesheet', type='text/css')
+    link(href=base_url+'css/bs_dp.min.css', rel='stylesheet', type='text/css')
+    link(href=base_url+'css/my_custom.css', rel='stylesheet', type='text/css')
+    link(type='text/css', rel='stylesheet', href=base_url+'css/chosen.min.css')
+    link(rel='stylesheet', type='text/css', href=base_url +'css/modal_theme.css')
+    link(rel='stylesheet', type='text/css', href=base_url +'css/cropper.min.css')
+    link(rel='stylesheet', type='text/css', href=base_url +'css/cropper.css')
+    link(rel='stylesheet', type='text/css', href=base_url +'css/jquery.fancybox.css',media='screen')
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+  body
+    #wrapper
+      nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+        .navbar-header
+          a.navbar-brand(href=base_url+ 'order/new') Image Editing App
+        ul.nav.navbar-right.top-nav
+          li.dropdown
+            a.dropdown-toggle(href='#', data-toggle='dropdown')
+              i.fa.fa-user= '  '+sess_username
+              b.caret
+            ul.dropdown-menu
+              li
+                a(href=base_url +'logout')
+                  i.fa.fa-fw.fa-power-off
+                  |  Log Out
+        .collapse.navbar-collapse.navbar-ex1-collapse
+          ul.nav.navbar-nav.side-nav
+            li
+              a(href=base_url+'inspirations/list')
+                i.fa.fa-fw.fa-edit
+                |  Inspiration List                      
+            li
+              a(href=base_url+'inspirations/add')
+                i.fa.fa-fw.fa-table
+                |  Add Inspiration
+            
+      #page-wrapper
+        .container-fluid
+          block content
+    script(src=base_url+'js/jquery.js')
+    script(src=base_url+'js/bootstrap.min.js')
+    script(src=base_url+'js/datatable.js')
+    script(src=base_url+'js/bs_dp.min.js')
+    script(src=base_url+'js/form_validations.js')
+    script(src=base_url+'js/sortable.js')
+    script(type='text/javascript',src=base_url +'js/jquery.fancybox.js')
+    script(type='text/javascript',src=base_url + 'js/jquery.fancybox.pack.js')
+    block scripts
+

@@ -1,0 +1,88 @@
+extends layout.pug
+
+block scripts
+    script(type='text/javascript').
+        var locale_data={}
+        locale_data.base_url='!{base_url}'
+    script(type='text/javascript',src=base_url +'js/loader_form_submit.js')
+    script(type='text/javascript',src=base_url + 'js/chosen.jquery.min.js')
+    script(type='text/javascript',src=base_url +'js/inspirations_list.js')
+    script(type='text/javascript',src=base_url +'js/modal.js')
+    script(type='text/javascript',src=base_url +'js/cropper_effects.js')
+    script(type='text/javascript',src=base_url +'js/cropper.common.js')
+    script(type='text/javascript',src=base_url +'js/cropper.min.js')
+    script(type='text/javascript',src=base_url +'js/cropper.js')
+
+block content
+    .my_loader(style="display:none;")
+    .row
+        .col-lg-12
+            h1.page-header  Add Inspiration
+    .row
+        .col-lg-12
+            if created
+                .alert.alert-success= created
+    .row
+        .col-lg-12
+            if error_message
+                .alert.alert-danger= error_message
+    .row
+            .col-lg-3
+            .col-lg-6
+                .form-group
+                    label Caption
+                    |  
+                    input(name='caption',required='').form-control
+                a.btn.btn-default(id="myBtn") Upload Image
+                
+                // The Modal
+                #myModal.modal
+                    // Modal content                   
+                    .modal-content
+                        .modal-header
+                            span.close ×
+                            .row
+                                .col-lg-12
+                                    h2 Upload Image
+                                .row
+                                    .col-lg-6
+                                        input#btnCrop.btn.btn-primary(type='button', value='Crop')
+                                    .col-lg-6
+                                        input#btnRestore.btn.btn-default(type='button', value='Restore')
+                        .modal-body
+                            .row
+                                .col-lg-8
+                                    .form-group
+                                        label Photo
+                                        |  
+                                        input#imagetocrop(name='photo',type='file').form-control
+                                        label(for='photo')  Select a Image file you wish to upload                                                             
+                            .row
+                                .col-lg-6
+                                    canvas#canvas 
+                                        | Your browser does not support the HTML5 canvas element                                                              
+                .form-group
+                    #croppedresult
+                .form-group
+                    label Styling
+                    |  
+                    select.form-control(name='styling',required='')
+                        
+                        option(value='') Select Option
+                        for style in styling
+                            option(value=style)= style    
+                        
+                .form-group
+                    label Ocassions
+                    select.chosen-select.form-control(name ='ocassion' data-placeholder='Select ocassion you wish to apply', multiple='true',required='required')
+                        for ocsn in ocassion
+                            option(value=ocsn)= ocsn 
+                .row
+                    .col-lg-4
+                    .col-lg-2
+                        button.btn.btn-default(id="addinspirations") ADD
+                    .col-lg-2
+                        a.btn.btn-default(href=base_url+'inspirations/list') CANCEL
+                    .col-lg-4
+            .col-lg-3
+
