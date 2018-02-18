@@ -5,7 +5,7 @@ Building a RESTFUL API with NODE, pure Raw MongoDB query on  cropper.js
 
 Here I have added Functionality of ``Cropper.js`` library for Cropping Image Files.After Cropping Image will get store in uploads folder.
 
-For Uploading Image I have used to  ``multer`` Dependenices from npm.
+For Uploading Image I have used to  ``multer`` Dependency from npm.
 
 For Listing Data I have used Jquery DataTables plugin as Server Side Rendering Tables Using Ajax Call.
 
@@ -25,7 +25,8 @@ https://github.com/Rahul-Barick/cropper.js.git
 cd cropper.js
 npm install
 ```
-After Downloading Run the Each Command From ``queries.txt`` on the terminal or Download the [RoboMongo] (https://robomongo.org/download) and Insert the command
+After Downloading Run the Each Command From ``queries.txt`` on the terminal or Download the 
+[RoboMongo](https://robomongo.org/download) and Insert the command
 
 # Start the server
 
