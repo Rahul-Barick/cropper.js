@@ -1,7 +1,6 @@
 var http_status = require('../helpers/http_stasuses.js');
 var models = require('../models');
 var async = require('async');
-var constants = require('../configs/constants.js');
 var config = require('../configs/config.js');
 var ObjectID = require('mongodb').ObjectID;
 var moment = require('moment');

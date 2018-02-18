@@ -67,7 +67,9 @@ if (cluster.isMaster) {
             http_status.INTERNAL_SERVER_ERROR(res, {message: err.message});
         });
 
-        app.listen(config[config.env].PORT);
+        app.listen(config[config.env].PORT,() => {
+            console.log(`Server listening on Port ${config[config.env].PORT}`);
+        });
     });
     module.exports = app;
 }

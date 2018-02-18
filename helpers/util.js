@@ -1,6 +1,5 @@
 var config = require('../configs/config.js');
 var ObjectID = require('mongodb').ObjectID;
-var constants = require("../configs/constants.js");
 
 module.exports = {
     validate_required_fields: function (required_array, validate_object) {
