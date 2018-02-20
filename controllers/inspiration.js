@@ -44,7 +44,6 @@ module.exports = {
                 if (req.body.ocassion && typeof req.body.ocassion === "string") {
                     req.body.ocassion = [req.body.ocassion];
                 }
-                var filter = {};
                 filter.caption = req.body.caption;
                 filter.styling = req.body.styling;
                 filter.ocassion = req.body.ocassion;
@@ -202,7 +201,6 @@ module.exports = {
 
         async.waterfall([
             function (upload_photo_callback) {
-                console.log("Hey")
                 if (!req.file) {
                     upload_photo_callback(null, null);
                     return;
@@ -214,7 +212,6 @@ module.exports = {
                 }
             },
             function (upload_data, insert_inspiration_cb) {
-                console.log(upload_data)
                 if (upload_data) {
                     req.body.photo_url = upload_data.location;
                 }
